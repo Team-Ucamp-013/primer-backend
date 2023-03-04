@@ -14,10 +14,20 @@ const PORT = 4001
 //     message: 'Hola soy un get'
 //   })
 // })
-app.get('/query', (req, res) => {
-  console.log('==>', req.query)
+// app.get('/query', (req, res) => {
+//   console.log('==>', req.query)
+//   const { nombre } = req.query
+//   const { apellido } = req.query
+//   res.send({
+//     message: `Hola ${nombre} ${apellido}`
+//   })
+// })
+app.get('/:nombre/:apellido', (req, res) => {
+  console.log('==>', req.params)
+  const { nombre } = req.params
+  const { apellido } = req.params
   res.send({
-    message: 'Revisa la query'
+    message: `Hola ${nombre} ${apellido}`
   })
 })
 
