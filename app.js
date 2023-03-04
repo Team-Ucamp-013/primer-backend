@@ -2,6 +2,7 @@
 const express = require('express')
 // 2.- crear objeto de la aplicacion
 const app = express()
+app.use(express.json());
 
 const PORT = 4001
 
@@ -32,6 +33,15 @@ const PORT = 4001
 //     message: `Hola ${nombre} ${apellido}`
 //   })
 // })
+
+app.post('/body', (req, res) => {
+  console.log(req.body)
+  const { email, password } = req.body
+  res.send({
+    email: email,
+    password: password
+  })
+})
 
 // 4.- levanta el servidor de mi app
 app.listen(PORT, () => {
