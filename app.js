@@ -14,6 +14,7 @@ const PORT = 4001
 //     message: 'Hola soy un get'
 //   })
 // })
+// http://localhost:4001/query?nombre=Fredo&apellido=Noriega
 // app.get('/query', (req, res) => {
 //   console.log('==>', req.query)
 //   const { nombre } = req.query
@@ -22,14 +23,15 @@ const PORT = 4001
 //     message: `Hola ${nombre} ${apellido}`
 //   })
 // })
-app.get('/:nombre/:apellido', (req, res) => {
-  console.log('==>', req.params)
-  const { nombre } = req.params
-  const { apellido } = req.params
-  res.send({
-    message: `Hola ${nombre} ${apellido}`
-  })
-})
+//http://localhost:4001/Fredo/Noriega
+// app.get('/:nombre/:apellido', (req, res) => {
+//   console.log('==>', req.params)
+//   const { nombre } = req.params
+//   const { apellido } = req.params
+//   res.send({
+//     message: `Hola ${nombre} ${apellido}`
+//   })
+// })
 
 // 4.- levanta el servidor de mi app
 app.listen(PORT, () => {
