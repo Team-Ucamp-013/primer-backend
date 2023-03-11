@@ -2,14 +2,14 @@
 const express = require('express')
 // 2.- crear objeto de la aplicacion
 const app = express()
-const { coursesRouter } = require('./api')
+const { coursesRouter, productsRouter } = require('./api')
 
 const PORT = 4001
 app.use('/courses', coursesRouter)
+app.use('/products', productsRouter)
 // req = request | Representa la peticion
 // res = response | Representa la respuesta que voy a regresar 
 //3.- Defino mis rutas
-
 
 // 4.- levanta el servidor de mi app
 app.listen(PORT, () => {
